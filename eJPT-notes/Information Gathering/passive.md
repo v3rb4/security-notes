@@ -1,7 +1,26 @@
-# Passive Information Gathering
+## Website Recon & Footprinting
 
-## Passive information gathering involves collecting data about a target website without direct interaction, minimizing the risk of detection. This is the first step in penetration testing (OSSTMM, OWASP) to map the target, identify technologies, and find potential vulnerabilities.
+### What are we looking for:
 
-### Website Recon
-host : dns lookup - to get public ip of the website and email servers
-robots.txt / sitemap.xml (look for hidden files)
+- **IP addresses**  
+  Use the `host` command – a DNS lookup utility to get public IP addresses and email servers. If a domain has two or more public IPs, it may be using a proxy.
+  ```sh
+  host example.com
+  ```
+
+- **Directories hidden from search engines**  
+  - `/robots.txt` – A plain text file that follows the Robots Exclusion Standard. It contains rules that allow or block access for web crawlers to specific paths on the domain or subdomain.
+  - `/sitemap.xml` – A sitemap is a roadmap for search engines, listing the pages on a website to improve indexing.
+
+- **Web technologies being used**  
+  - **Browser Add-ons for Firefox:** `BuiltWith` or `Wappalyzer` – These tools identify web technologies running on the site, such as widgets, plugins, and a list of subdomains.
+  - **WhatWeb Utility (pre-installed on Kali Linux):** An open-source tool designed to detect various technologies used by a website.
+    ```sh
+    whatweb www.example.com
+    ```
+
+- **Website mirroring**  
+  - [HTTrack](https://www.httrack.com) – A tool used to download a website's source code and save it to a local directory for offline analysis.
+    ```sh
+    httrack https://example.com
+    ```
