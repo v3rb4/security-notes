@@ -32,7 +32,7 @@
   - Alternative: [Whois Lookup](https://who.is)
 
 - **[Netcraft](https://sitereport.netcraft.com)**  
-  - Collects website information in an easy-to-understand format.
+  - Collects website information in an easy-to-understand format https://sitereport.netcraft.com
 
 ## DNS Recon
 
