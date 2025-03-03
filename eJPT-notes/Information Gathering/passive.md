@@ -1,3 +1,5 @@
+# Passive Information Gathering
+
 ## Website Recon & Footprinting
 
 ### What are we looking for:
@@ -24,3 +26,7 @@
     ```sh
     httrack https://example.com
     ```
+- **Whois - command line utility in kali
+- ```$whois hackersploit.org```
+- we can also visit https://who.is
+- **[Netcraft](https://sitereport.netcraft.com) - collects all the information we could obtain manually. Easy to understand format
