@@ -30,3 +30,11 @@
 - ```$whois hackersploit.org```
 - we can also visit https://who.is
 - **[Netcraft](https://sitereport.netcraft.com) - collects all the information we could obtain manually. Easy to understand format
+- **DNS recon**
+- - dnsrecon pre packaged in kali python script that provides the ability to perform: check all NameServer records for zone Transfers
+  - [dnsdumpster](https://dnsdumpster.com) handy tool dns recon & research, find & lookup dns records. OSINT for Network Infrastructure 
+**WAF Detection with wafw00f (web application firewall**
+- - wafw00f pre packaged in kali 
+   ```sh
+    $wafw00f http://hackertube.net -a
+    ```
