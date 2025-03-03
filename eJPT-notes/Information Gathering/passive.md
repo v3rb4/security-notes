@@ -44,7 +44,7 @@
 
 ## WAF Detection
 
-- `wafw00f` – Detects Web Application Firewalls (WAFs).
+- `wafw00f` pre packaged in kali – Detects Web Application Firewalls (WAFs).
   ```sh
   wafw00f betsol.com -a
   ```
