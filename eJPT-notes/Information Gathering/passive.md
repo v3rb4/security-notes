@@ -51,4 +51,4 @@
 
 ## Passive subdomain enumeration 
 - Sublist3r (it's not pre installed in kali) sudo apt-get install sublist3r
-  `sublist3r -d hackersploit.org -e google, yahoo`
+- `sublist3r -d hackersploit.org -e google, yahoo`
