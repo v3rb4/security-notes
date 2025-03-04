@@ -54,3 +54,5 @@
  ```sh
    sublist3r -d hackersploit.org -e google, yahoo
  ```
+## Google dorks
+- site:.*example.com, intitle:admin, filetype:pdf, intitle:index of, inurl:passwd.txt etc
