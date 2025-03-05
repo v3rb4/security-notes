@@ -57,3 +57,11 @@
 ## Google dorks
 - site:.*example.com, intitle:admin, filetype:pdf, intitle:index of, inurl:passwd.txt etc
 - waybackmachine
+
+## Email enumeration 
+- theHarvester pre-installed in Kali
+      ```sh
+    theHarvester -d example -b google,linkedin...
+    ```
+## Leaked password databases
+- haveibeenpwned.com
