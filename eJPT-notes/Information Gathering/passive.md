@@ -56,3 +56,4 @@
  ```
 ## Google dorks
 - site:.*example.com, intitle:admin, filetype:pdf, intitle:index of, inurl:passwd.txt etc
+- waybackmachine
