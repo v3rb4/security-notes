@@ -1,1 +1,7 @@
-# security_notes
+# eJPT Notes
+
+Notes created for eJPT preparation
+
+## Content 
+- Passive
+- Active
