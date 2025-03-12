@@ -41,6 +41,26 @@
 2. SYN-ACK: Upon receicing the SYN segment, the server responds with a TCP segment that holds both the SYN and ACK flags set. The ACK number is set to one more the initial sequence number received in the clients SYN segment. The server also generates its own sequence number.
 3. ACK: Finally the client ackmowleges the server's response by sending a TCP segment with the ACK flag set. The acknowlegment number is set to one more that the server's initial sequence number. 
 
+## Network Mapping 
+- Network mapping is the process of discovering and identifying devices, hosts, and network infrastructure within a target network. It helps penetration testers understand the network’s layout, detect active hosts, open ports, and running operating systems, and identify potential entry points for further exploitation.
+
+## Network Mapping Objectives
+- Network Mapping Objectives:
+	1.	OS Fingerprinting – Identifying operating systems on discovered hosts to target specific vulnerabilities.
+	2.	Service Version Detection – Determining versions of services running on open ports to find potential exploits.
+	3.	Identifying Security Measures – Detecting firewalls, intrusion prevention systems, and other defenses to plan attacks accordingly.
+
+## Host Discovery Techniques
+	1.	Ping Sweeps (ICMP Echo Requests) – Sending ICMP pings to identify live hosts.
+	2.	ARP Scanning – Using ARP requests to detect hosts on a local network.
+	3.	TCP SYN Ping (Half-Open Scan) – Sending SYN packets to check for active hosts stealthily.
+	4.	UDP Ping – Sending UDP packets to detect hosts that don’t respond to ICMP or TCP.
+	5.	TCP ACK Ping – Sending ACK packets; a TCP RST response indicates a live host.
+	6.	SYN-ACK Ping – Sending SYN-ACK packets; a TCP RST response confirms host activity.
+
+
+
+
 
 
 
