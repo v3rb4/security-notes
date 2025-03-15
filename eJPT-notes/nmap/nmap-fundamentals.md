@@ -2,61 +2,66 @@
 
 ## Firewall Detection & IDS Evasion
 
-### Fragmentation scan
+### Fragmentation Scan with Custom MTU
 
-nmap -f [target]
-
-Sends fragmented packets to bypass firewall filtering.
-
-### Custom MTU (Fragment Size)
 ```bash
 nmap -f --mtu [size] [target]
+```
+Sets custom fragment size (e.g., `--mtu 24`) to evade IDS detection.
 
-Sets custom fragment size, e.g., --mtu 24, for IDS evasion.
+### Decoy Scan (Spoofed Sources)
 
-Decoy Scan (Spoofed Sources)
-
+```bash
 nmap -D RND:10 [target]
+```
+Masks the real scanner IP using multiple random decoy IP addresses.
 
-Masks the real scanning IP by using multiple random decoy IPs.
+### Combined IDS Evasion Techniques
 
-Combined IDS Evasion Techniques
-
+```bash
 nmap -f -T0 --data-length 50 [target]
+```
+Combines fragmentation (`-f`), very slow timing (`-T0`), and random payload data (`--data-length`) to bypass IDS detection.
 
-Uses fragmentation (-f), slow timing (-T0), and random payload data (--data-length) to evade IDS detection.
+---
 
-⸻
+## Optimizing Nmap Scans
 
-Optimizing Nmap Scans
-	•	Adjust timing templates: nmap -T[0-5] [target]
-(T0 slowest, T5 fastest; recommended: -T4).
-	•	Set minimum packet rate:
+- **Adjust Timing Templates** (`T0` slowest, `T5` fastest; recommended: `-T4`):
+  ```bash
+  nmap -T[0-5] [target]
+  ```
 
-nmap --min-rate [packets/sec] [target]
+- **Set Minimum Packet Rate:**
+  ```bash
+  nmap --min-rate [packets/sec] [target]
+  ```
 
+- **Limit Retries:**
+  ```bash
+  nmap --max-retries [num] [target]
+  ```
 
-	•	Limit retries:
+- **Show Only Open Ports:**
+  ```bash
+  nmap --open [target]
+  ```
 
-nmap --max-retries [num] [target]
+---
 
-	•	Show only open ports:
+## Nmap Output Formats
 
-nmap --open [target]
+- **Normal (Human-Readable):**
+  ```bash
+  nmap -oN scan.txt [target]
+  ```
 
+- **XML (Easy Parsing):**
+  ```bash
+  nmap -oX scan.xml [target]
+  ```
 
-
-⸻
-
-Nmap Output Formats
-	•	Normal (human-readable):
-
-nmap -oN scan.txt [target]
-
-	•	XML (easy parsing):
-
-nmap -oX scan.xml [target]
-
-	•	Grepable (for quick parsing):
-
-nmap -oG scan.gnmap [target]
+- **Grepable (Quick Parsing):**
+  ```bash
+  nmap -oG scan.gnmap [target]
+  
