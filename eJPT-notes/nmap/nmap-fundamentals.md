@@ -64,4 +64,14 @@ Combines fragmentation (`-f`), very slow timing (`-T0`), and random payload data
 - **Grepable (Quick Parsing):**
   ```bash
   nmap -oG scan.gnmap [target]
-  
+
+- **Importing Nmap XML Results into Metasploit database:**
+
+  ```bash
+  msfconsole
+  msf6 > db_import scan.xml
+  msf6 > hosts
+  msf6 > services
+  ```
+- `db_import` imports scan data for convenient management within Metasploit.
+- Commands `hosts` and `services` verify the imported data.
