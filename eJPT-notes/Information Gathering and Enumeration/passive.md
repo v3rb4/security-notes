@@ -23,7 +23,11 @@
     ```sh
     httrack https://example.com
     ```
-
+- **AutoRecon**
+  - autorecon is a multi-threaded network reconnaissance tool which performs automated enumeration of services.
+    ```sh
+    autorecon
+    ```
 - **Whois Lookup**  
   - Command-line utility in Kali Linux.
     ```sh
