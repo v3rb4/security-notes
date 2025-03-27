@@ -14,7 +14,7 @@
 - **Web technologies used**  
   - `whatweb` – Identifies technologies used on a website.
     ```sh
-    whatweb www.example.com
+    whatweb -v www.example.com
     ```
   - **Firefox Add-ons:** `BuiltWith`, `Wappalyzer` – Identify CMS, plugins, and subdomains.
 
