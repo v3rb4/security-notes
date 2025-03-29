@@ -1,8 +1,48 @@
-## Active Information Gathering
+🔎 Active Information Gathering
 
-- nmap
-- netdiscover
-  ` netdiscover -i eth0 -r 192.168.2.0/24 `
-- For doing DNS zonetransfer: dig axfr <nameserver> domain
-- ` dig axfr @nsztm1.digi.ninja zonetransfer.me `
-- ` fierce -dns zonetransfer.me`
+🛰 Network Scanning
+
+Netdiscover – identify devices on the local network
+
+netdiscover -i eth0 -r 192.168.2.0/24
+
+Nmap – powerful network scanner
+
+nmap -sV -sC -O -Pn target.com
+
+	•	-sV – detect service versions
+	•	-sC – run default NSE scripts
+	•	-O – attempt OS detection
+	•	-Pn – skip host discovery (no ping)
+
+Masscan – extremely fast port scanner
+
+masscan -p1-65535 192.168.1.0/24 --rate=1000
+
+	•	--rate=1000 — limit scan speed to avoid overwhelming the network
+
+---
+
+🌐 DNS Reconnaissance
+
+dig – perform DNS zone transfer manually
+
+dig axfr @nsztm1.digi.ninja zonetransfer.me
+
+fierce – semi-automated DNS recon tool
+
+fierce -dns zonetransfer.me
+
+dnsenum – extended DNS reconnaissance
+
+dnsenum zonetransfer.me
+
+Nmap NSE script for DNS zone transfer
+
+nmap --script dns-zone-transfer -p 53 zonetransfer.me
+
+whois and dig basics
+
+whois example.com
+dig example.com any
+dig +short ns example.com
