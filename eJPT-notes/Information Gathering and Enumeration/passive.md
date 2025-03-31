@@ -23,10 +23,15 @@
     ```sh
     httrack https://example.com
     ```
-- **AutoRecon**
+- **AutoRecon** 
   - autorecon is a multi-threaded network reconnaissance tool which performs automated enumeration of services.
     ```sh
     autorecon
+    ```
+- **Amass**
+  - amass is an open-source reconnaissance tool that discovers subdomains and maps external attack surfaces using passive and active techniques.
+    ```sh
+    amass enum -passive -d example.com
     ```
 - **Whois Lookup**  
   - Command-line utility in Kali Linux.
