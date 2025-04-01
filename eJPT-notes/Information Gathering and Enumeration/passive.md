@@ -24,9 +24,10 @@
     httrack https://example.com
     ```
 - **AutoRecon** 
-  - autorecon is a multi-threaded network reconnaissance tool which performs automated enumeration of services.
+  - autorecon is a multi-threaded network reconnaissance tool which performs automated enumeration of services. 
+  - By default, it runs `nmap`, `gobuster`, `nikto`, and other tools based on detected services.  
     ```sh
-    autorecon
+    autorecon 10.10.10.10 --only-scans-dir --ports 1-1000
     ```
 - **Amass**
   - amass is an open-source reconnaissance tool that discovers subdomains and maps external attack surfaces using passive and active techniques.
