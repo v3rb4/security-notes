@@ -29,6 +29,12 @@
     ```sh
     autorecon 10.10.10.10 --only-scans-dir --ports 1-1000
     ```
+    - Common flags:
+    - `--only-scans-dir` – save results in the current directory
+    - `--ports` – specify custom ports to scan
+    - `--wordlist` – provide your own wordlist for directory enumeration
+    - `--threads` – number of concurrent threads
+    - 
 - **Amass**
   - amass is an open-source reconnaissance tool that discovers subdomains and maps external attack surfaces using passive and active techniques.
     ```sh
