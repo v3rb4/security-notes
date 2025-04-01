@@ -73,8 +73,8 @@
 
 ## Email enumeration 
 - theHarvester pre-installed in Kali
-      ```sh
+    ```sh
     theHarvester -d example -b google,linkedin...
     ```
 ## Leaked password databases
-- haveibeenpwned.com
+- [haveibeenpwned.com](https://haveibeenpwned.com) - Useful for email enumeration and credential leak discovery. 
