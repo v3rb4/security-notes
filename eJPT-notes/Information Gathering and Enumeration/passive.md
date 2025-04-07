@@ -69,6 +69,7 @@
 - subfinder is a fast and passive subdomain enumeration tool written in Go. 
  ```sh
   subfinder -d example.com -o result.txt
+  subfinder -d example.com -all -timeout 15 -max-time 10 -silent | sort -u
  ```
 - Sublist3r can be used to perform a subdomain brute force (it's not pre installed in kali sudo apt-get install sublist3r)
  ```sh
