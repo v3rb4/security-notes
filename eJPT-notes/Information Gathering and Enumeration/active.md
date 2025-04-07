@@ -1,6 +1,6 @@
-🔎 Active Information Gathering
+## 🔎 Active Information Gathering
 
-🛰 Network Scanning
+### 🛰 Network Scanning
 
 Netdiscover – identify devices on the local network
 
@@ -10,20 +10,20 @@ Nmap – powerful network scanner
 
 nmap -sV -sC -O -Pn target.com
 
-	•	-sV – detect service versions
-	•	-sC – run default NSE scripts
-	•	-O – attempt OS detection
-	•	-Pn – skip host discovery (no ping)
+ - -sV – detect service versions
+ - -sC – run default NSE scripts
+ - -O – attempt OS detection
+ - -Pn – skip host discovery (no ping)
 
 Masscan – extremely fast port scanner
 
 masscan -p1-65535 192.168.1.0/24 --rate=1000
 
-	•	--rate=1000 — limit scan speed to avoid overwhelming the network
+--rate=1000 — limit scan speed to avoid overwhelming the network
 
 ---
 
-🌐 DNS Reconnaissance
+### 🌐 DNS Reconnaissance
 
 dig – perform DNS zone transfer manually
 
