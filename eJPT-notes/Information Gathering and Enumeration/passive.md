@@ -36,9 +36,10 @@
     - `--threads` – number of concurrent threads
       
 - **Amass**
-  - amass is an open-source reconnaissance tool that discovers subdomains and maps external attack surfaces using passive and active techniques.
-    ```sh
-    amass enum -passive -d example.com
+  - amass is an open-source reconnaissance tool that discovers subdomains and maps external attack surfaces using passive and active techniques. 
+  - Passive: It will only obtain information from data sources and blindly accept it.
+    ```
+    amass enum --passive -d example.com
     ```
 - **Whois Lookup**  
   - Command-line utility in Kali Linux.
