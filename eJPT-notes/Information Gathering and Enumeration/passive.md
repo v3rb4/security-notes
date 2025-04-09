@@ -69,6 +69,7 @@
 ## Passive subdomain enumeration 
 - subfinder is a fast and passive subdomain enumeration tool written in Go. 
  ```sh
+  subfinder -dL list.txt -v (Enumerating Subdomains From a List of Domains)
   subfinder -d example.com -o result.txt
   subfinder -d example.com -all -timeout 15 -max-time 10 -silent | sort -u
  ```
