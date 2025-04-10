@@ -21,6 +21,12 @@ masscan -p1-65535 192.168.1.0/24 --rate=1000
 
 --rate=1000 — limit scan speed to avoid overwhelming the network
 
+### Amass ###
+- Amass helps you find all the domains, subdomains, and related IPs that belong to a target — even the hidden or forgotten ones.
+```
+amass enum -d example.com -brute -active -o active_recon.txt
+```
+
 ---
 
 ### 🌐 DNS Reconnaissance
