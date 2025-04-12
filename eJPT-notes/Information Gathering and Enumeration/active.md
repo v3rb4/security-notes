@@ -27,6 +27,10 @@ masscan -p1-65535 192.168.1.0/24 --rate=1000
 amass enum -d example.com -brute -active -o active_recon.txt
 ```
 
+### nuclei ###
+
+### httpx ###
+
 ---
 
 ### 🌐 DNS Reconnaissance
