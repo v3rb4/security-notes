@@ -27,7 +27,13 @@ masscan -p1-65535 192.168.1.0/24 --rate=1000
 amass enum -d example.com -brute -active -o active_recon.txt
 ```
 
-### nuclei ###
+### Nuclei ###
+- Nuclei is a fast, flexible vulnerability scanner that uses YAML-based templates.  
+It’s widely used for automated recon and vulnerability detection.
+
+```
+nuclei -target https://example.com -t 
+```
 
 ### httpx ###
 
