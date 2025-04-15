@@ -32,7 +32,7 @@ amass enum -d example.com -brute -active -o active_recon.txt
 It’s widely used for automated recon and vulnerability detection.
 
 ```
-nuclei -target https://example.com -t 
+nuclei -target https://example.com -t ~/nuclei-templates/
 ```
 
 ### httpx ###
