@@ -41,6 +41,9 @@ nuclei -target https://example.com -t ~/nuclei-templates/
 ```
 whats htcat subfinder_example.txt | httpx -silent -status-code -mc 200 -o active_hosts.txt
 ```
+```
+cat subfinder_example.txt | httpx -silent -status-code -mc 200 -o active_hosts.txt
+```
 
 ---
 
