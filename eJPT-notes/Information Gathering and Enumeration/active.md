@@ -50,6 +50,9 @@ cat subfinder_example.txt | httpx -silent -status-code -mc 200 -o active_hosts.t
 - dirsearch — active web path scanner. Discover hidden or unlisted web paths (for recon or exploitation)
  - It brute-forces directories and files on websites using a wordlist
  - Sends HTTP requests like: /admin, /login.php, /backup.zip
+   ```
+   dirsearch -u http://example.com
+   ```
    
 ### 🌐 DNS Reconnaissance
 
