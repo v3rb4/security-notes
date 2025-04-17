@@ -22,12 +22,14 @@ masscan -p1-65535 192.168.1.0/24 --rate=1000
 --rate=1000 — limit scan speed to avoid overwhelming the network
 
 ### Amass ###
+
 - Amass helps you find all the domains, subdomains, and related IPs that belong to a target — even the hidden or forgotten ones.
 ```
 amass enum -d example.com -brute -active -o active_recon.txt
 ```
 
 ### Nuclei ###
+
 - Nuclei is a fast, flexible vulnerability scanner that uses YAML-based templates.  
 It’s widely used for automated recon and vulnerability detection.
 
@@ -36,6 +38,7 @@ nuclei -target https://example.com -t ~/nuclei-templates/
 ```
 
 ### httpx ###
+
 - httpx is a fast and multi-purpose HTTP toolkit built to support running multiple probes using a public library. Probes are specific tests or checks to gather information about web servers, URLs, or other HTTP elements. Httpx is designed to maintain result reliability with an increased number of threads. 
 ```
 whats htcat subfinder_example.txt | httpx -silent -status-code -mc 200 -o active_hosts.txt
@@ -44,9 +47,8 @@ whats htcat subfinder_example.txt | httpx -silent -status-code -mc 200 -o active
 cat subfinder_example.txt | httpx -silent -status-code -mc 200 -o active_hosts.txt
 ```
 
----
-
 ### dirsearch ###
+
 - dirsearch — active web path scanner. Discover hidden or unlisted web paths (for recon or exploitation)
  - It brute-forces directories and files on websites using a wordlist
  - Sends HTTP requests like: /admin, /login.php, /backup.zip
