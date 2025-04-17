@@ -55,6 +55,11 @@ cat subfinder_example.txt | httpx -silent -status-code -mc 200 -o active_hosts.t
    ```
    dirsearch -u http://example.com
    ```
+### OKAdminFinder ###
+- OKAdminFinder is an active reconnaissance tool used in web pentesting to brute-force common admin login pages on a target website. It sends HTTP requests to known admin paths and reports which ones exist based on server responses.
+ - Scans a target website for common admin login page URLs
+ - Uses a predefined wordlist (like /admin, /admin/login, /admin.php, etc.)
+ - Reports the URLs that return status codes like 200 OK
    
 ### 🌐 DNS Reconnaissance
 
