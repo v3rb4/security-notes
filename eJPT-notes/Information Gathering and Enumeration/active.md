@@ -86,3 +86,11 @@ whois and dig basics
 whois example.com
 dig example.com any
 dig +short ns example.com
+
+### Whatweb ###
+
+- WhatWeb is an open-source web scanner used to identify technologies used by a website by sending HTTP requests and analyzing responses. It detects CMS platforms, server types, frameworks, and other web technologies.
+
+ - whatweb http://target.com
+ - whatweb -v http://target.com
+ - whatweb --aggressive http://target.com
