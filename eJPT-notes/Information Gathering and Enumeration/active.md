@@ -39,7 +39,7 @@ nuclei -target https://example.com -t ~/nuclei-templates/
 
 ### httpx ###
 
-- httpx is a fast and multi-purpose HTTP toolkit built to support running multiple probes using a public library. Probes are specific tests or checks to gather information about web servers, URLs, or other HTTP elements. Httpx is designed to maintain result reliability with an increased number of threads. 
+- httpx – fast web probe to check live hosts, status codes, technologies.
 
 ```
 cat subfinder_example.txt | httpx -silent -status-code -mc 200 -o active_hosts.txt
