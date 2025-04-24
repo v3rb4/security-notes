@@ -1,5 +1,7 @@
 # Nmap Cheat Sheet
 
+**Nmap** is a powerful network scanner used for host discovery, port scanning, service enumeration, OS fingerprinting, and vulnerability assessment. This cheat sheet contains optimized commands for evasion, performance, and integration.
+
 ## Firewall Detection & IDS Evasion
 
 ### Fragmentation Scan with Custom MTU
