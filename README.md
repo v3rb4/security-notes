@@ -12,7 +12,7 @@ Concise notes for the eLearnSecurity Junior Penetration Tester (eJPT) certificat
 
 ---
 
-## Upcoming Sections 🚀
+## Upcoming Sections
 
 - **Footprinting and Scanning**  
   Deeper network scanning and OS/service fingerprinting.
