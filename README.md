@@ -2,11 +2,39 @@
 
 Concise notes for the eLearnSecurity Junior Penetration Tester (eJPT) certification.
 
-## Contents
-- Passive Information Gathering
-- Active Information Gathering
-- Network Fundamentals
-- Nmap Essentials
+## Contents:
+### Completed Sections ✅
+
+- **Passive Information Gathering**  
+- **Active Information Gathering**  
+- **Network Fundamentals**  
+- **Nmap Essentials**
+
+---
+
+## Upcoming Sections 🚀
+
+- **Footprinting and Scanning**  
+  Deeper network scanning and OS/service fingerprinting.
+
+- **Enumeration**  
+  Gathering detailed service information (SMB, FTP, HTTP, DNS).
+
+- **Vulnerability Assessment**  
+  Identifying known vulnerabilities in discovered services.
+
+- **Exploitation Basics**  
+  Basics of exploiting vulnerabilities manually and with Metasploit.
+
+- **Web Application Attacks**  
+  Testing web apps for vulnerabilities: SQLi, XSS, Directory Traversal, LFI/RFI.
+
+- **Post Exploitation**  
+  Actions after getting access: information gathering, privilege escalation, persistence.
+
+- **Reporting**  
+  How to document your findings and make professional recommendations.
+
 
 ## Resources
 - [PTSv2 Course](https://my.ine.com/learning-paths)
