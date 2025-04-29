@@ -61,3 +61,15 @@ Concise notes for the eLearnSecurity Junior Penetration Tester (eJPT) certificat
 - Flexibility: multiple ways to achieve objectives.
 - Focus: Practical application over theory.
 - Engagement: Provided letter simulating a real engagement.
+
+## Essential Tools
+- Nmap
+- Wireshark
+- Metasploit Framework
+- Burp Suite
+- Hydra
+- Dirb/Dirbuster
+- SQLmap
+- John the Ripper
+- Netcat
+
