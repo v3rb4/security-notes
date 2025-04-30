@@ -9,7 +9,7 @@ Concise notes for the eLearnSecurity Junior Penetration Tester (eJPT) certificat
 - **Active Information Gathering**  
 - **Network Fundamentals**  
 - **Nmap Essentials**
-
+- **Assessment Methodologies**
 ---
 
 ## Upcoming Sections
