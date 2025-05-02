@@ -1,8 +1,11 @@
-Nmap
+**Nmap**
 
+```
 nmap -sU --top-ports 25 : port 137, 138 are udp smb ports. check if open.
-Nmap enum scripts
+```
+**Nmap enum scripts**
 
+```
 nmap -sU --top-ports 25 <ip>
 
 SMB UDP ports
@@ -38,3 +41,4 @@ smb-enum-domains --script-args smbusername=,smbpassword=
 smb-enum-groups --script-args smbusername=,smbpassword=
 
 smb-enum-services --script-args smbusername=,smbpassword=
+```
