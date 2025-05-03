@@ -9,7 +9,7 @@ nmap -sU --top-ports 25 : port 137, 138 are udp smb ports. check if open.
 nmap -sU --top-ports 25 <ip>
 ```
 
-SMB UDP ports
+***SMB UDP ports***
 
 smb-protocols : list supported protocols
 
@@ -20,9 +20,12 @@ smb-os-discovery.nse : NetBIOS computer name and OS
 
 smb-enum-sessions : enum logged in users
 
+```
 smb-enum-sessions --script-args smbusername=,smbpassword=
-
+```
+```
 smb-enum-users.nse : list all users that exist on samba version
+```
 
 smb-enum-users.nse output
 
