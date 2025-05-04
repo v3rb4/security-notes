@@ -1,94 +1,86 @@
-# Nmap Cheat Sheet
+# Nmap Cheat Sheet for eJPT
 
-**Nmap** is a powerful network scanner used for host discovery, port scanning, service enumeration, OS fingerprinting, and vulnerability assessment. This cheat sheet contains optimized commands for evasion, performance, and integration.
+## Basic Scanning
+
+```bash
+nmap [target]                         # Default TCP SYN scan
+nmap -sV -O [target]                  # Service version and OS detection
+nmap -A [target]                      # Aggressive scan (OS, version, scripts)
+nmap -p- [target]                     # Scan all 65535 TCP ports
+nmap -p 1-1000 [target]               # Scan port range
+nmap -sU [target]                     # UDP scan
+```
 
 ## Firewall Detection & IDS Evasion
 
-### Fragmentation Scan with Custom MTU
+```bash
+nmap -f --mtu 24 [target]             # Fragment packets (24-byte size)
+nmap -D RND:10 [target]               # Use 10 random decoy IPs
+nmap -f -T0 --data-length 50 [target] # Combined evasion techniques
+nmap --spoof-mac [MAC|0|vendor] [target] # MAC address spoofing
+nmap --source-port 53 [target]        # Source from trusted port
+```
+
+## Performance Optimization
 
 ```bash
-nmap -f --mtu [size] [target]
+nmap -T[0-5] [target]                 # Timing template (0=slow, 5=fast)
+nmap --min-rate 1000 [target]         # Set min packet rate
+nmap --max-retries 2 [target]         # Limit retry attempts
+nmap -n [target]                      # No DNS resolution
+nmap --open [target]                  # Show only open ports
 ```
-Sets custom fragment size (e.g., `--mtu 24`) to evade IDS detection.
 
-### Decoy Scan (Spoofed Sources)
+## Output Formats
 
 ```bash
-nmap -D RND:10 [target]
+nmap -oN scan.txt [target]            # Normal output
+nmap -oX scan.xml [target]            # XML output
+nmap -oG scan.gnmap [target]          # Grepable output
+nmap -oA scan [target]                # Save in all formats
 ```
-Masks the real scanner IP using multiple random decoy IP addresses.
 
-### Combined IDS Evasion Techniques
+## NSE Scripts
 
 ```bash
-nmap -f -T0 --data-length 50 [target]
+nmap -sC [target]                     # Default scripts
+nmap --script=[script-name] [target]  # Specific script
+nmap --script=[category] [target]     # Script category
 ```
-Combines fragmentation (`-f`), very slow timing (`-T0`), and random payload data (`--data-length`) to bypass IDS detection.
 
----
+## Vulnerability Scanning Examples
 
-## Optimizing Nmap Scans
+```bash
+# EternalBlue (MS17-010) vulnerability check
+nmap -p445 --script smb-vuln-ms17-010 [target]
 
-- **Adjust Timing Templates** (`T0` slowest, `T5` fastest; recommended: `-T4`):
-  ```bash
-  nmap -T[0-5] [target]
-  ```
+# BlueKeep (CVE-2019-0708) vulnerability check
+nmap -p3389 --script rdp-vuln-cve2019-0708 [target]
 
-- **Set Minimum Packet Rate:**
-  ```bash
-  nmap --min-rate [packets/sec] [target]
-  ```
+# Scan for multiple critical SMB vulnerabilities
+nmap -p445 --script "smb-vuln*" [target]
 
-- **Limit Retries:**
-  ```bash
-  nmap --max-retries [num] [target]
-  ```
+# Scan for all known vulnerabilities
+nmap --script vuln [target]
+```
 
-- **Show Only Open Ports:**
-  ```bash
-  nmap --open [target]
-  ```
+## Metasploit Integration
 
----
+```bash
+# Export for Metasploit
+nmap -sV -oX scan.xml [target]
 
-## Nmap Output Formats
+# Import to Metasploit
+msfconsole
+msf6 > db_import scan.xml
+msf6 > hosts
+msf6 > services
+```
 
-- **Normal (Human-Readable):**
-  ```bash
-  nmap -oN scan.txt [target]
-  ```
+## eJPT Practical Examples
 
-- **XML (Easy Parsing):**
-  ```bash
-  nmap -oX scan.xml [target]
-  ```
-
-- **Grepable (Quick Parsing):**
-  ```bash
-  nmap -oG scan.gnmap [target]
-<<<<<<< HEAD
-=======
-  ```
-## Importing Nmap Scan Results Into Metasploit
-
-- **Exporting Nmap Scan Results for Metasploit:**
-  ```bash
-  nmap -sV -oX scan.xml [target]
-  ```
->>>>>>> 43ff48b (Updating nmap fundamentals)
-
-- **Importing Nmap XML Results into Metasploit database:**
-
-  ```bash
-  msfconsole
-  msf6 > db_import scan.xml
-  msf6 > hosts
-  msf6 > services
-  ```
-<<<<<<< HEAD
-- `db_import` imports scan data for convenient management within Metasploit.
-- Commands `hosts` and `services` verify the imported data.
-=======
-  - `db_import` imports scan data for convenient management within Metasploit.
-  - Commands `hosts` and `services` verify the imported data.
->>>>>>> 43ff48b (Updating nmap fundamentals)
+```bash
+nmap -sn 192.168.1.0/24              # Quick host discovery
+nmap -sV -sC -p- -T4 --open [target]  # Complete service enumeration
+nmap -sS -T2 -f [target]              # Stealth scan for IDS evasion
+```
