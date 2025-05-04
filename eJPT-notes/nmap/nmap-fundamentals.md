@@ -1,5 +1,9 @@
 # Nmap Cheat Sheet for eJPT
 
+**Nmap** is a powerful network scanner used for host discovery, port scanning, service enumeration, OS fingerprinting, and vulnerability assessment.
+
+---
+
 ## Basic Scanning
 
 ```bash
@@ -11,25 +15,31 @@ nmap -p 1-1000 [target]               # Scan port range
 nmap -sU [target]                     # UDP scan
 ```
 
+---
+
 ## Firewall Detection & IDS Evasion
 
 ```bash
-nmap -f --mtu 24 [target]             # Fragment packets (24-byte size)
+nmap -f --mtu 24 [target]             # Fragment packets with custom MTU
 nmap -D RND:10 [target]               # Use 10 random decoy IPs
-nmap -f -T0 --data-length 50 [target] # Combined evasion techniques
-nmap --spoof-mac [MAC|0|vendor] [target] # MAC address spoofing
-nmap --source-port 53 [target]        # Source from trusted port
+nmap -f -T0 --data-length 50 [target] # Fragmented packets + slow scan + data length
+nmap --spoof-mac Apple [target]       # MAC spoofing (example: Apple)
+nmap --source-port 53 [target]        # Use trusted source port (e.g., DNS)
 ```
+
+---
 
 ## Performance Optimization
 
 ```bash
-nmap -T[0-5] [target]                 # Timing template (0=slow, 5=fast)
-nmap --min-rate 1000 [target]         # Set min packet rate
+nmap -T4 [target]                     # Faster scan (T0 slowest, T5 fastest)
+nmap --min-rate 1000 [target]         # Set minimum packet rate
 nmap --max-retries 2 [target]         # Limit retry attempts
-nmap -n [target]                      # No DNS resolution
+nmap -n [target]                      # Skip DNS resolution
 nmap --open [target]                  # Show only open ports
 ```
+
+---
 
 ## Output Formats
 
@@ -37,50 +47,40 @@ nmap --open [target]                  # Show only open ports
 nmap -oN scan.txt [target]            # Normal output
 nmap -oX scan.xml [target]            # XML output
 nmap -oG scan.gnmap [target]          # Grepable output
-nmap -oA scan [target]                # Save in all formats
+nmap -oA scan [target]                # All formats (normal + XML + grepable)
 ```
 
-## NSE Scripts
+---
+
+## NSE Scripts (Vulnerability Scanning)
 
 ```bash
-nmap -sC [target]                     # Default scripts
-nmap --script=[script-name] [target]  # Specific script
-nmap --script=[category] [target]     # Script category
+nmap -sC [target]                            # Default scripts
+nmap --script smb-vuln-ms17-010 -p445 [target]   # EternalBlue (MS17-010)
+nmap --script rdp-vuln-cve2019-0708 -p3389 [target] # BlueKeep (CVE-2019-0708)
+nmap --script "smb-vuln*" -p445 [target]         # Multiple SMB vulnerabilities
+nmap --script vuln [target]                    # All known vulns
 ```
 
-## Vulnerability Scanning Examples
-
-```bash
-# EternalBlue (MS17-010) vulnerability check
-nmap -p445 --script smb-vuln-ms17-010 [target]
-
-# BlueKeep (CVE-2019-0708) vulnerability check
-nmap -p3389 --script rdp-vuln-cve2019-0708 [target]
-
-# Scan for multiple critical SMB vulnerabilities
-nmap -p445 --script "smb-vuln*" [target]
-
-# Scan for all known vulnerabilities
-nmap --script vuln [target]
-```
+---
 
 ## Metasploit Integration
 
 ```bash
-# Export for Metasploit
-nmap -sV -oX scan.xml [target]
+nmap -sV -oX scan.xml [target]         # Export Nmap scan to XML
 
-# Import to Metasploit
 msfconsole
 msf6 > db_import scan.xml
 msf6 > hosts
 msf6 > services
 ```
 
-## eJPT Practical Examples
+---
+
+## Practical eJPT Examples
 
 ```bash
-nmap -sn 192.168.1.0/24              # Quick host discovery
-nmap -sV -sC -p- -T4 --open [target]  # Complete service enumeration
-nmap -sS -T2 -f [target]              # Stealth scan for IDS evasion
+nmap -sn 192.168.1.0/24                  # Ping sweep (host discovery)
+nmap -sV -sC -p- -T4 --open [target]     # Full scan with scripts and version detection
+nmap -sS -T2 -f [target]                 # Stealth scan with fragmentation
 ```
