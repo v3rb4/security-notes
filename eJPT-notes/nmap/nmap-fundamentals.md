@@ -1,4 +1,4 @@
-# Nmap Cheat Sheet for eJPT
+# Nmap Cheat Sheet
 
 **Nmap** is a powerful network scanner used for host discovery, port scanning, service enumeration, OS fingerprinting, and vulnerability assessment.
 
