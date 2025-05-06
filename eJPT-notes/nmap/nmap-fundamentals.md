@@ -37,6 +37,7 @@ nmap --min-rate 1000 [target]         # Set minimum packet rate
 nmap --max-retries 2 [target]         # Limit retry attempts
 nmap -n [target]                      # Skip DNS resolution
 nmap --open [target]                  # Show only open ports
+nmap 
 ```
 
 ---
