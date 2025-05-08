@@ -10,18 +10,18 @@ Concise notes for the eLearnSecurity Junior Penetration Tester (eJPT) certificat
 - **Network Fundamentals**  
 - **Nmap Essentials**
 - **Assessment Methodologies**
+- **Footprinting and Scanning**
+- **Enumeration**  
+- **Vulnerability Assessment**
+- **Exploitation Basics**
+  
 ---
 
 ## Upcoming Sections
 
-- **Footprinting and Scanning**  
-  Deeper network scanning and OS/service fingerprinting.
 
-- **Enumeration**  
-  Gathering detailed service information (SMB, FTP, HTTP, DNS).
 
-- **Vulnerability Assessment**  
-  Identifying known vulnerabilities in discovered services.
+
 
 - **Exploitation Basics**  
   Basics of exploiting vulnerabilities manually and with Metasploit.
