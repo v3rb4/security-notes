@@ -8,7 +8,7 @@ netdiscover -i eth0 -r 192.168.2.0/24
 
 Nmap – powerful network scanner
 
-nmap -sV -sC -O -Pn target.com
+nmap -sV -sC -O -Pn target IP address
 
  - -sV – detect service versions
  - -sC – run default NSE scripts
