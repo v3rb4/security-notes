@@ -72,4 +72,5 @@ Concise notes for the eLearnSecurity Junior Penetration Tester (eJPT) certificat
 - SQLmap
 - John the Ripper
 - Netcat
+- Gsocket
 
