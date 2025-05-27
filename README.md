@@ -63,7 +63,6 @@ Concise notes for the eLearnSecurity Junior Penetration Tester (eJPT) certificat
 - Engagement: Provided letter simulating a real engagement.
 
 ## Essential Tools
-- Linux
 - Nmap
 - Wireshark
 - Metasploit Framework
